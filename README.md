@@ -4,8 +4,6 @@ Sistema de gestión de boletos y pasajeros para una empresa de transporte
 terrestre, desarrollado como aplicación de consola en Java bajo el paradigma
 de programación orientada a objetos.
 
-[Dos líneas más: qué problema resuelve. Sácalo del objetivo general
-de tu documento de la semana 4.]
 
 ## Curso
 
