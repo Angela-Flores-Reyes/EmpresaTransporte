@@ -4,6 +4,7 @@ Sistema de gestión de boletos y pasajeros para una empresa de transporte
 terrestre, desarrollado como aplicación de consola en Java bajo el paradigma
 de programación orientada a objetos.
 
+Resuelve los errores de asignación de asientos y la lentitud en la atención de boletería, que actualmente se llevan de forma manual.
 
 ## Curso
 
