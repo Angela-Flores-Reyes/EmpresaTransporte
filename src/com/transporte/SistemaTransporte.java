@@ -148,10 +148,10 @@ public class SistemaTransporte {
                             
                         case 5 -> System.out.println("Saliendo del sistema. ¡Hasta luego!");
                             
-                        default -> System.out.println("Opción inválida. Intente de nuevo.");
+                        default -> System.out.println("Opción inválida. Ingrese un número del 1 al 5.");
                     }
                 } else {
-                    System.out.println("Por favor, ingrese un número válido.");
+                    System.out.println("Entrada inválida. Ingrese un número del 1 al 5.");
                     scanner.next(); // Limpiar entrada incorrecta
                 }
                 
