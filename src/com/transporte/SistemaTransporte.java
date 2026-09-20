@@ -61,23 +61,16 @@ public class SistemaTransporte {
         }
         return tarifaBase;
     }
-
-    // Manejo de errores con try/catch/finally
-    public void verificarYVenderBoleto(String codigoRuta, int cantidadAsientos) throws BoletoNoDisponibleException {
-        try {
-            System.out.println("\n[Proceso] Verificando ruta: " + codigoRuta);
-            if (!rutasDisponibles.containsKey(codigoRuta)) {
-                throw new BoletoNoDisponibleException("Error: La ruta '" + codigoRuta + "' no existe en el sistema.");
-            }
-            if (cantidadAsientos > 15) {
-                throw new BoletoNoDisponibleException("Error: No hay suficientes asientos disponibles (máximo 15).");
-            }
-            System.out.println("¡Venta de boletos exitosa! Asientos reservados: " + cantidadAsientos);
-        } catch (BoletoNoDisponibleException e) {
-            System.out.println("[EXCEPCIÓN CAPTURADA]: " + e.getMessage());
-        } finally {
-            System.out.println("[FIN DE TRANSACCIÓN]: Operación finalizada de forma segura.");
+        // El metodo detecta y lanza la excepcion; el menu es quien la atrapa
+        public void verificarYVenderBoleto(String codigoRuta, int cantidadAsientos) throws BoletoNoDisponibleException {
+        System.out.println("\n[Proceso] Verificando ruta: " + codigoRuta);
+        if (!rutasDisponibles.containsKey(codigoRuta)) {
+            throw new BoletoNoDisponibleException("Error: La ruta '" + codigoRuta + "' no existe en el sistema.");
         }
+        if (cantidadAsientos > 15) {
+            throw new BoletoNoDisponibleException("Error: No hay suficientes asientos disponibles (máximo 15).");
+        }
+        System.out.println("¡Venta de boletos exitosa! Asientos reservados: " + cantidadAsientos);
     }
 
     public void mostrarPasajeros() {
@@ -147,6 +140,9 @@ public class SistemaTransporte {
                                 sistema.verificarYVenderBoleto("R01", 3); // Válido
                                 sistema.verificarYVenderBoleto("R99", 2); // Generará excepción a propósito
                             } catch (BoletoNoDisponibleException e) {
+                                System.out.println("[EXCEPCIÓN CAPTURADA]: " + e.getMessage());
+                            } finally {
+                                System.out.println("[FIN DE TRANSACCIÓN]: Operación finalizada de forma segura.");
                             }
                         }
                             
